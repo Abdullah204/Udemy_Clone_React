@@ -1,0 +1,58 @@
+.course {
+  width: 200px;
+  margin: 25px 15px 5px 0;
+}
+
+.course-image {
+  width: 100%;
+}
+
+.course-title {
+  margin: 5px 0 0 0;
+}
+
+.course-author {
+  color: #6a6f73;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.course-rating {
+  color: #b4690e;
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.fa-star {
+  color: #e59819;
+}
+
+.course-raters {
+  color: #6a6f73;
+}
+
+.new-price {
+  font-weight: 800;
+}
+
+.old-price {
+  color: #6a6f73;
+  text-decoration: line-through;
+}
+
+.best-seller-container {
+  margin-top: 10px;
+}
+
+.best-seller {
+  background-color: #eceb98;
+  padding: 5px;
+}
+
+.price-container {
+  margin-top: 7px;
+}
+
+.rating-container {
+  margin-top: 7px;
+}
