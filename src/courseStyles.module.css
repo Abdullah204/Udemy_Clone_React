@@ -1,5 +1,5 @@
 .course {
-  width: 200px;
+  width: 18%;
   margin: 25px 15px 5px 0;
 }
 
@@ -55,4 +55,16 @@
 
 .rating-container {
   margin-top: 7px;
+}
+
+@media only screen and (max-width: 1092px) {
+  .course {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .course {
+    width: 90%;
+  }
 }

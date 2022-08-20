@@ -25,7 +25,7 @@
   text-overflow: ellipsis;
   white-space: normal;
   margin-bottom: 1.6rem;
-  max-width: 50rem;
+  width: 65%;
   font-size: 18px;
 }
 
