@@ -1,83 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import courseStyles from "./courseStyles.module.css";
-import tabStyles from "./tabStyles.module.css";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalf } from "react-icons/fa";
+import LearningTab from "./LearningTab.js";
 
 // ========================================
-
-class Course extends React.Component {
-  render() {
-    let bs;
-    if (this.props.courseData.isBestSeller == "True") {
-      bs = (
-        <div className={courseStyles["best-seller-container"]}>
-          <span className={courseStyles["best-seller"]}>Best Seller</span>
-        </div>
-      );
-    }
-    var stars = [];
-    for (let i = 0; i < Math.floor(this.props.courseData.rating); i++) {
-      stars.push(<FaStar className={courseStyles["fa-star"]}></FaStar>);
-    }
-    let x = this.props.courseData.rating;
-    if (x - Math.floor(x) >= 0.2)
-      stars.push(<FaStarHalf className={courseStyles["fa-star"]}></FaStarHalf>);
-    return (
-      <div className={courseStyles["course"]}>
-        <img
-          src={this.props.courseData.imgurl}
-          className={courseStyles["course-image"]}
-        ></img>
-        <h3 className={courseStyles["course-title"]}>
-          {this.props.courseData.title}{" "}
-        </h3>
-        <div className={courseStyles["course-author"]}>
-          {this.props.courseData.author}
-        </div>
-        <div className={courseStyles["rating-container"]}>
-          <span className={courseStyles["course-rating"]}>
-            {this.props.courseData.rating}
-          </span>
-          {stars}
-          <span className={courseStyles["course-raters"]}>
-            ({this.props.courseData.raters_no})
-          </span>
-          <div className={courseStyles["price-container"]}>
-            <span className={courseStyles["new-price"]}>
-              E£{this.props.courseData.newPrice}{" "}
-            </span>
-            <span className={courseStyles["old-price"]}>
-              E£{this.props.courseData.oldPrice}
-            </span>
-          </div>
-          {bs}
-        </div>
-      </div>
-    );
-  }
-}
-
-class LearningTab extends React.Component {
-  render() {
-    let courses = [];
-
-    let arr = this.props.coursesData;
-    for (let course of arr) {
-      courses.push(<Course courseData={course}></Course>);
-    }
-    return (
-      <div className={tabStyles["learning-tab"]}>
-        <h2 className={tabStyles["tab-title"]}>{this.props.title}</h2>
-        <p className={tabStyles["tab-description"]}>{this.props.paragraph}</p>
-        <button className={tabStyles["explore-button"]}>Explore Python</button>
-        <div className={tabStyles["course-list"]}>{courses}</div>
-      </div>
-    );
-  }
-}
 
 // ==========================================
 const courseArray = [
