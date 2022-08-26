@@ -4,6 +4,9 @@ import courseStyles from "./courseStyles.module.css";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 
+// description :
+// props : one Object (courseData) including all data related to course
+// like title , image , rating . .etc
 function Course(props) {
   let bs;
   if (props.courseData.isBestSeller == "True") {
@@ -13,13 +16,9 @@ function Course(props) {
       </div>
     );
   }
-  var stars = [];
-  for (let i = 0; i < Math.floor(props.courseData.rating); i++) {
-    stars.push(<FaStar className={courseStyles["fa-star"]}></FaStar>);
-  }
-  let x = props.courseData.rating;
-  if (x - Math.floor(x) >= 0.2)
-    stars.push(<FaStarHalf className={courseStyles["fa-star"]}></FaStarHalf>);
+
+  let stars = generateStars(props.courseData.rating); // generate stars depending on rating
+
   return (
     <div className={courseStyles["course"]}>
       <img
@@ -54,3 +53,16 @@ function Course(props) {
   );
 }
 export default Course;
+
+// description : takes course rating and
+//returns number of stars depending on course rating
+function generateStars(rating) {
+  let stars = [];
+  for (let i = 0; i < Math.floor(rating); i++) {
+    stars.push(<FaStar className={courseStyles["fa-star"]}></FaStar>);
+  }
+
+  if (rating - Math.floor(rating >= 0.2))
+    stars.push(<FaStarHalf className={courseStyles["fa-star"]}></FaStarHalf>);
+  return stars;
+}

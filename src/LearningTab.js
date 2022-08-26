@@ -3,13 +3,13 @@ import "./index.css";
 import tabStyles from "./tabStyles.module.css";
 import Course from "./Course.js";
 
+// description :
+// props : coursesData : array of course data ,
+//each object im array is containing , imgurl , title rating .. etc
 function LearningTab(props) {
-  let courses = [];
-
-  let arr = props.coursesData;
-  for (let course of arr) {
-    courses.push(<Course courseData={course}></Course>);
-  }
+  let courses = props.coursesData.map((course) => (
+    <Course courseData={course}></Course>
+  ));
 
   return (
     <div className={tabStyles["learning-tab"]}>
