@@ -1,0 +1,27 @@
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.tab-list {
+  margin-left: 5px;
+  padding-inline-start: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab-list > li {
+  font-weight: 700;
+  font-size: 15px;
+  color: #6a6f73;
+  margin: 5px 20px 5px 0;
+  list-style: none;
+}
+
+.tab-list > li:hover {
+  color: black;
+}
+
+.tab-list > .python {
+  color: black;
+}

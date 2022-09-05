@@ -1,0 +1,30 @@
+.behind-nav {
+  color: white;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1c1d1f;
+  z-index: 2;
+  padding: 16px 24px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 16%);
+}
+
+.rating {
+  color: #f3ca8c;
+}
+
+.raters {
+  padding: 0 10px;
+  color: #cec0fc;
+}
+
+.row-two {
+  padding-top: 10px;
+  display: flex;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+}

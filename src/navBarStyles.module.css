@@ -1,0 +1,172 @@
+nav {
+  width: 100%;
+  display: flex;
+  height: 72px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  z-index: 1010;
+  background-color: white;
+  position: relative;
+}
+
+.logo {
+  margin-top: 5px;
+  height: 35px;
+  padding: 10px;
+}
+
+.bars {
+  display: none;
+}
+
+.search-bar {
+  border-radius: 9999px;
+  background-color: #f7f9fa;
+  flex-grow: 1;
+  display: inline-block;
+  /* padding: 20px 0 20px 0; */
+  border: 1px solid #1c1d1f;
+  display: flex;
+  margin: 10px auto;
+}
+
+.search-icon {
+  padding-right: 15px;
+  margin: 17px 0 0 15px;
+}
+
+.search-button {
+  height: 25px;
+  margin: auto 10px;
+}
+
+input {
+  border: 0px;
+  margin: 10px 20px 10px 0;
+  background-color: #f7f9fa;
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.categories {
+  margin-top: 5px;
+  padding: 20px;
+}
+
+.categories:hover {
+  color: #401b9c;
+}
+
+.business {
+  padding: 20px;
+  margin-top: 5px;
+}
+
+.business:hover {
+  color: #401b9c;
+}
+
+.teach {
+  padding: 20px;
+  margin-top: 5px;
+}
+
+.teach:hover {
+  color: #401b9c;
+}
+
+.cart {
+  padding: 20px;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.cart:hover {
+  color: #401b9c;
+}
+
+.login {
+  font-size: 1rem;
+  padding: 5px 20px 5px 20px;
+  margin: 15px 5px 15px 5px;
+  font-weight: 800;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.login:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.sign-up {
+  border: 1px solid black;
+  font-size: 1rem;
+  padding: 5px 15px 5px 15px;
+  margin: 15px 5px 15px 5px;
+  font-weight: 800;
+  background-color: black;
+  color: white;
+}
+
+.globe {
+  border: 1px solid black;
+  margin: 16px 16px 0 0;
+  padding: 10px;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.globe-container:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media only screen and (max-width: 1170px) {
+  .business {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1007px) {
+  .teach {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 845px) {
+  .categories {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login {
+    display: none;
+  }
+
+  .sign-up {
+    display: none;
+  }
+
+  .cart {
+    display: none;
+  }
+
+  .search-bar {
+    display: none;
+  }
+
+  .globe {
+    display: none;
+  }
+
+  .logo {
+    margin-left: auto;
+    order: 2;
+  }
+
+  .bars {
+    display: inline-block;
+    margin: auto 0 auto 15px;
+    height: 27px;
+    width: 30px;
+  }
+}

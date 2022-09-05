@@ -1,0 +1,78 @@
+.flex {
+  display: flex;
+}
+
+.bar {
+  flex: 1;
+  background-color: #d1d7dc;
+  height: 8px;
+  margin: auto 10px;
+  display: flex;
+}
+
+.ratio {
+  background-color: #6a6f73;
+  width: 43%;
+}
+/* #6a6f73 */
+.row-container {
+  flex: 1;
+}
+
+.bar-container {
+  display: flex;
+}
+
+.overall {
+  color: #b4690e;
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.star {
+  color: goldenrod;
+  width: 24px;
+  height: 20px;
+}
+
+.left {
+  margin-right: 20px;
+}
+
+.right {
+  flex: 1;
+}
+
+.score {
+  text-align: center;
+  width: 35px;
+  margin-left: 15px;
+  color: #5624d0;
+  text-decoration: underline;
+}
+
+.course-rating {
+  text-align: center;
+  font-weight: 600;
+  color: #b4690e;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 625px) {
+  .flex {
+    display: block;
+  }
+
+  .star {
+    display: none;
+  }
+  .left {
+    display: flex;
+  }
+
+  .course-rating {
+    margin: auto 10px 20px 15px;
+  }
+}

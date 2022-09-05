@@ -1,0 +1,40 @@
+.container {
+  max-width: 1500px;
+  margin: 5px auto;
+  position: relative;
+}
+
+.clock-img {
+  width: 100%;
+}
+
+.small-img {
+  width: 100%;
+  display: none;
+}
+
+.header-text {
+  position: absolute;
+  top: 16%;
+  left: 7%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  padding: 2rem;
+  width: 340px;
+}
+
+@media only screen and (max-width: 768px) {
+  .clock-img {
+    display: none;
+  }
+
+  .small-img {
+    display: block;
+  }
+  .header-text {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}

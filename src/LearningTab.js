@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
-import tabStyles from "./tabStyles.module.css";
+import learningTabStyles from "./learningTabStyles.module.css";
 import Course from "./Course.js";
-
-// description :
-// props : coursesData : array of course data ,
-//each object im array is containing , imgurl , title rating .. etc
 function LearningTab(props) {
-  let courses = props.coursesData.map((course) => (
-    <Course courseData={course}></Course>
+  useEffect(() => {
+    const getInfo = async () => {
+      const response = await fetch("http://localhost:3000/python");
+
+      if (response.status === 200) {
+        const res = await response.json();
+        setCoursesData(res);
+      } else {
+        throw new Error("Unable to fetch data");
+      }
+    };
+
+    getInfo();
+  }, []);
+
+  const [coursesData, setCoursesData] = useState([]);
+  let courses = coursesData.map((cData) => (
+    <Course courseData={cData}></Course>
   ));
+  // let courses = props.coursesData.map((course) => (
+  //   <Course courseData={course}></Course>
+  // ));
 
   return (
-    <div className={tabStyles["learning-tab"]}>
-      <h2 className={tabStyles["tab-title"]}>{props.title}</h2>
-      <p className={tabStyles["tab-description"]}>{props.paragraph}</p>
-      <button className={tabStyles["explore-button"]}>Explore Python</button>
-      <div className={tabStyles["course-list"]}>{courses}</div>
+    <div className={learningTabStyles["learning-tab"]}>
+      <h2 className={learningTabStyles["tab-title"]}>{props.title}</h2>
+      <p className={learningTabStyles["tab-description"]}>{props.paragraph}</p>
+      <button className={learningTabStyles["explore-button"]}>
+        Explore Python
+      </button>
+      <div className={learningTabStyles["course-list"]}>{courses}</div>
     </div>
   );
 }

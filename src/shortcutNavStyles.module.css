@@ -1,0 +1,48 @@
+.container {
+  border-bottom: 1px solid #d1d7dc;
+  padding: 0 65px;
+}
+
+.container-sticky {
+  position: fixed;
+  top: 72px;
+  z-index: 1200;
+  border-bottom: 1px solid #d1d7dc;
+  background-color: white;
+  padding: 0 65px;
+  width: 100%;
+}
+
+.width-container {
+  max-width: 1184px;
+  margin: auto;
+}
+.list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.button {
+  color: #6a6f73;
+  text-align: center;
+  width: 175px;
+  padding: 15px 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+.button:hover {
+  color: #1c1d1f;
+  border-bottom: 2px solid #1c1d1f;
+}
+
+@media only screen and (max-width: 1150px) {
+  .container {
+    display: none;
+  }
+  .container-sticky {
+    display: none;
+  }
+}
