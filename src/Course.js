@@ -11,7 +11,7 @@ import CourseHover from "./CourseHover";
 function Course(props) {
   const myRef = useRef();
   let bs;
-  if (props.courseData.isBestSeller === "True") {
+  if (props.courseData.bestseller_badge_content !== null) {
     bs = (
       <div className={courseStyles["best-seller-container"]}>
         <span className={courseStyles["best-seller"]}>Best Seller</span>
@@ -24,23 +24,27 @@ function Course(props) {
   const handleHover = () => {
     let sw = window.innerWidth;
     let pos = myRef.current.offsetLeft;
-    if (sw - pos < 500) {
-      setHoverCard(<CourseHover cName="course-hover-right" />);
+    if (sw - pos < 600) {
+      setHoverCard(
+        <CourseHover cName="course-hover-right" data={props.courseData} />
+      );
     } else {
-      setHoverCard(<CourseHover cName="course-hover-left" />);
+      setHoverCard(
+        <CourseHover cName="course-hover-left" data={props.courseData} />
+      );
     }
   };
   const handleLeave = () => setHoverCard("");
   return (
     <div ref={myRef} className={courseStyles["course"]}>
       <Link
-        to="course"
+        to={`course/${props.courseData.id}`}
         className={courseStyles["link"]}
         onMouseOver={handleHover}
         onMouseLeave={handleLeave}
       >
         <img
-          src={props.courseData.imgurl}
+          src={props.courseData.image_304x171}
           className={courseStyles["course-image"]}
           alt="course"
         ></img>
@@ -56,7 +60,7 @@ function Course(props) {
           </span>
           {stars}
           <span className={courseStyles["course-raters"]}>
-            ({props.courseData.raters_no})
+            ({props.courseData.num_reviews})
           </span>
           <div className={courseStyles["price-container"]}>
             <span className={courseStyles["new-price"]}>

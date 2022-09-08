@@ -1,42 +1,71 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdAccessAlarms } from "react-icons/md";
 import fixedCardStyles from "./fixedCardStyles.module.css";
+import { CoursePageContext, HomePageContext } from "./App";
 
+import { useParams } from "react-router-dom";
 function FixedCard(props) {
+  let params = useParams();
+  let cid = params.courseid;
+
+  const detailsContext = useContext(CoursePageContext);
+  const homeContext = useContext(HomePageContext);
+
   let img = "";
   if (props.viewImage) {
     img = (
       <img
-        src="https://img-c.udemycdn.com/course/480x270/394676_ce3d_5.jpg"
+        src={homeContext[cid].image_240x135}
         alt="course logo"
         className={fixedCardStyles["image"]}
       ></img>
     );
   }
 
-  return (
-    <div className={fixedCardStyles["fixed-card"]}>
+  return props.view ? (
+    <div className={fixedCardStyles[props.cardClassName]}>
       {img}
       <div className={fixedCardStyles["below-image"]}>
         <div className={fixedCardStyles["price-container"]}>
-          <div className={fixedCardStyles["new-price"]}>E£149.99</div>
-          <div className={fixedCardStyles["old-price"]}>E£199.99</div>
-          <div className={fixedCardStyles["discount"]}>78% off</div>
+          <div className={fixedCardStyles["new-price"]}>
+            E£{homeContext[cid].newPrice}
+          </div>
+          <div className={fixedCardStyles["old-price"]}>
+            E£{homeContext[cid].oldPrice}
+          </div>
+          <div className={fixedCardStyles["discount"]}>
+            {Math.round(
+              ((homeContext[cid].oldPrice - homeContext[cid].newPrice) /
+                homeContext[cid].oldPrice) *
+                100
+            )}
+            % off
+          </div>
         </div>
         <div className={fixedCardStyles["time-left"]}>
           <MdAccessAlarms className={fixedCardStyles["alarm"]} />
-          <strong>1 day </strong>left at this price!
+          <strong>{homeContext[cid].time_left_discount} </strong>left at this
+          price!
         </div>
         <button className={fixedCardStyles["cart"]}>Add to cart</button>
         <button className={fixedCardStyles["buy"]}>Buy now</button>
         <div className={fixedCardStyles["guarantee"]}>
           30-day Money-back guarantee
         </div>
+        {/* "on_demand_video": "7 hours",
+      "article_count": 23,
+      "downloadable_resource": 5, */}
         <div className={fixedCardStyles["includes"]}>This course includes:</div>
         <ul className={fixedCardStyles["list"]}>
-          <li className={fixedCardStyles["item"]}>14 hours on-demand video</li>
-          <li className={fixedCardStyles["item"]}>1 article</li>
-          <li className={fixedCardStyles["item"]}>3 downloadable resources</li>
+          <li className={fixedCardStyles["item"]}>
+            {homeContext[cid].on_demand_video} hours on-demand video
+          </li>
+          <li className={fixedCardStyles["item"]}>
+            {homeContext[cid].article_count} article
+          </li>
+          <li className={fixedCardStyles["item"]}>
+            {homeContext[cid].downloadable_resource} downloadable resources
+          </li>
           <li className={fixedCardStyles["item"]}>Full lifetime access</li>
           <li className={fixedCardStyles["item"]}>Access on mobile and TV</li>
           <li className={fixedCardStyles["item"]}>Certificate of completion</li>
@@ -58,6 +87,8 @@ function FixedCard(props) {
         </button>
       </div>
     </div>
+  ) : (
+    ""
   );
 }
 

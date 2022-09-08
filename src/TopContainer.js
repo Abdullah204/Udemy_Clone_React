@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import TopContainerStyles from "./topContainerStyles.module.css";
+import { CoursePageContext, HomePageContext } from "./App";
 import {
   MdStar,
   MdStarHalf,
@@ -8,7 +9,14 @@ import {
 } from "react-icons/md";
 import { BsExclamationOctagon, BsGlobe } from "react-icons/bs";
 import { MdAccessAlarms } from "react-icons/md";
+import { useParams } from "react-router-dom";
+
 function TopContainer() {
+  const params = useParams();
+  const cid = params.courseid;
+  const detailsContext = useContext(CoursePageContext);
+  const homeContext = useContext(HomePageContext);
+
   return (
     <div className={TopContainerStyles["top-container"]}>
       <div className={TopContainerStyles["width-container"]}>
@@ -23,41 +31,46 @@ function TopContainer() {
           <MdKeyboardArrowRight className={TopContainerStyles["arrow"]} />
           <span className={TopContainerStyles["learning-filter"]}>Python</span>
           <img
-            src="https://img-c.udemycdn.com/course/480x270/394676_ce3d_5.jpg"
+            src={homeContext[cid].image_240x135}
             alt="video"
             className={TopContainerStyles["sm-img"]}
           ></img>
           <h1 className={TopContainerStyles["title"]}>
-            Learn Python: The Complete Python Programming Course
+            {homeContext[cid].title}
           </h1>
           <h2 className={TopContainerStyles["description"]}>
-            Learn A-Z everything about Python, from the basics, to advanced
-            topics like Python GUI, Python Data Analysis, and more!
+            {homeContext[cid].headline}
           </h2>
           <div className={TopContainerStyles["feats-row"]}>
-            <span className={TopContainerStyles["rating"]}>4.4</span>
-            {/* #f3ca8c */}
-            <MdStar className={TopContainerStyles["star"]} />
-            <MdStar className={TopContainerStyles["star"]} />
-            <MdStar className={TopContainerStyles["star"]} />
-            <MdStar className={TopContainerStyles["star"]} />
-            <MdStarHalf className={TopContainerStyles["star"]} />
-            <span className={TopContainerStyles["purple"]}>
-              (3,146) ratings
+            <span></span>
+            <span className={TopContainerStyles["rating"]}>
+              {homeContext[cid].avg_rating}
+              {"     "}
             </span>
-            <span className={TopContainerStyles["white"]}>19,237 students</span>
+
+            <span className={TopContainerStyles["stars"]}>
+              {"  "} {generateStars(homeContext[cid].avg_rating)}
+            </span>
+            <span className={TopContainerStyles["purple"]}>
+              ({homeContext[cid].num_reviews}) ratings
+            </span>
+            <span className={TopContainerStyles["white"]}>
+              {homeContext[cid].num_subscribers} students
+            </span>
           </div>
           <div className={TopContainerStyles["feats-row"]}>
-            <span className={TopContainerStyles["white"]}>Created by </span>
+            <span className={TopContainerStyles["white"]}>Created by</span>
             <span className={TopContainerStyles["purple"]}>
-              Avinash Jain , The Codex
+              {homeContext[cid].visible_instructors
+                .map((el) => el.title)
+                .join(", ")}
             </span>
           </div>
           <div className={TopContainerStyles["feats-row"]}>
             <div className={TopContainerStyles["sm-row"]}>
               <BsExclamationOctagon className={TopContainerStyles["white"]} />
               <span className={TopContainerStyles["white"]}>
-                Last updated 9/2015
+                last updated {homeContext[cid].last_update_date}
               </span>
             </div>
             <div className={TopContainerStyles["sm-row"]}>
@@ -66,18 +79,32 @@ function TopContainer() {
             </div>
             <div className={TopContainerStyles["sm-row"]}>
               <MdClosedCaptionOff className={TopContainerStyles["white"]} />
-              <span className={TopContainerStyles["white"]}>English</span>
+              <span className={TopContainerStyles["white"]}>
+                {homeContext[cid].caption_languages.join(", ")}
+              </span>
             </div>
           </div>
 
           <div className={TopContainerStyles["price-container"]}>
-            <div className={TopContainerStyles["new-price"]}>E£149.99</div>
-            <div className={TopContainerStyles["old-price"]}>E£199.99</div>
-            <div className={TopContainerStyles["discount"]}>78% off</div>
+            <div className={TopContainerStyles["new-price"]}>
+              E£{homeContext[cid].newPrice}
+            </div>
+            <div className={TopContainerStyles["old-price"]}>
+              E£{homeContext[cid].oldPrice}
+            </div>
+            <div className={TopContainerStyles["discount"]}>
+              {Math.round(
+                ((homeContext[cid].oldPrice - homeContext[cid].newPrice) /
+                  homeContext[cid].oldPrice) *
+                  100
+              )}
+              % off
+            </div>
           </div>
           <div className={TopContainerStyles["time-left"]}>
             <MdAccessAlarms className={TopContainerStyles["alarm"]} />
-            <strong>1 day </strong>left at this price!
+            <strong>{homeContext[cid].time_left_discount}</strong>left at this
+            price!
           </div>
           <button className={TopContainerStyles["cart"]}>Add to cart</button>
           <div className={TopContainerStyles["guarantee"]}>
@@ -95,6 +122,19 @@ function TopContainer() {
       </div>
     </div>
   );
+}
+
+function generateStars(rating) {
+  let stars = [];
+  for (let i = 0; i < Math.floor(rating); i++) {
+    stars.push(<MdStar className={TopContainerStyles["star"]}></MdStar>);
+  }
+
+  if (rating - Math.floor(rating >= 0.2))
+    stars.push(
+      <MdStarHalf className={TopContainerStyles["star"]}></MdStarHalf>
+    );
+  return stars;
 }
 
 export default TopContainer;

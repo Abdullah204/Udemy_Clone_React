@@ -5,32 +5,23 @@ import { BsCheck2 } from "react-icons/bs";
 function CourseHover(props) {
   return (
     <div className={courseHoverStyles[props.cName]}>
-      <h2 className={courseHoverStyles["title"]}>
-        Learn Python: The Complete Python Programming Course
-      </h2>
+      <h2 className={courseHoverStyles["title"]}>{props.data.title}</h2>
       <div className={courseHoverStyles["updated"]}>
-        Updated <strong>september 2015</strong>
+        Updated <strong>{props.data.last_update_date}</strong>
       </div>
       <div className={courseHoverStyles["hours"]}>
-        14.5 total hours • All Levels • subtitles
+        {props.data.content_info} • All Levels • subtitles
       </div>
-      <div className={courseHoverStyles["desc"]}>
-        Learn A-Z everything about Python, from the basics, to advanced topics
-        like Python GUI, Python Data Analysis, and more!
-      </div>
+      <div className={courseHoverStyles["desc"]}>{props.data.headline}</div>
       <ul className={courseHoverStyles["list"]}>
-        <li className={courseHoverStyles["item"]}>
-          <BsCheck2 className={courseHoverStyles["check"]} />
-          Create their own Python Programs
-        </li>
-        <li className={courseHoverStyles["item"]}>
-          <BsCheck2 className={courseHoverStyles["check"]} />
-          Become an experienced Python Programmer
-        </li>
-        <li className={courseHoverStyles["item"]}>
-          <BsCheck2 className={courseHoverStyles["check"]} />
-          Parse the Web and Create their own Games
-        </li>
+        {props.data.objectives_summary.map((el) => {
+          return (
+            <li className={courseHoverStyles["item"]}>
+              <BsCheck2 className={courseHoverStyles["check"]} />
+              {el}
+            </li>
+          );
+        })}
       </ul>
       <div className={courseHoverStyles["bottom"]}>
         <button className={courseHoverStyles["button"]}>Add to Cart</button>

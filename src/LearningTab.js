@@ -1,27 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { DataContext, HomePageContext } from "./App";
 import "./index.css";
 import learningTabStyles from "./learningTabStyles.module.css";
 import Course from "./Course.js";
+import MoonLoader from "react-spinners/MoonLoader";
+import { useSearchParams } from "react-router-dom";
 function LearningTab(props) {
+  const context = useContext(HomePageContext);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const getInfo = async () => {
-      const response = await fetch("http://localhost:3000/python");
-
-      if (response.status === 200) {
-        const res = await response.json();
-        setCoursesData(res);
-      } else {
-        throw new Error("Unable to fetch data");
-      }
-    };
-
-    getInfo();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   }, []);
 
-  const [coursesData, setCoursesData] = useState([]);
-  let courses = coursesData.map((cData) => (
-    <Course courseData={cData}></Course>
-  ));
+  const loaded = useContext(DataContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+  let searchString = searchParams.get("query");
+
+  let courses = [];
+  Object.keys(context).forEach(function (key, index) {
+    if (
+      searchString == null ||
+      context[key].title.toLowerCase().includes(searchString.toLowerCase())
+    ) {
+      courses.push(<Course courseData={context[key]} />);
+    }
+  });
+
+  //let courses = context.map((cData) => <Course courseData={cData}></Course>);
   // let courses = props.coursesData.map((course) => (
   //   <Course courseData={course}></Course>
   // ));
@@ -33,7 +41,16 @@ function LearningTab(props) {
       <button className={learningTabStyles["explore-button"]}>
         Explore Python
       </button>
-      <div className={learningTabStyles["course-list"]}>{courses}</div>
+      {/* {loading ? (
+        <MoonLoader className={learningTabStyles["loader"]} />
+      ) : (
+        <div className={learningTabStyles["course-list"]}>{courses}</div>
+      )} */}
+      {loaded ? (
+        <div className={learningTabStyles["course-list"]}>{courses}</div>
+      ) : (
+        <MoonLoader className={learningTabStyles["loader"]} />
+      )}
     </div>
   );
 }

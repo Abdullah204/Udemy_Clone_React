@@ -44,6 +44,7 @@ div > .accordion:first-of-type {
 }
 
 .purple {
+  width: 73%;
   color: #5624d0;
   padding-left: 15px;
   text-decoration: underline;
@@ -51,6 +52,7 @@ div > .accordion:first-of-type {
 
 .black {
   padding-left: 15px;
+  width: 73%;
 }
 
 .preview {
@@ -61,9 +63,11 @@ div > .accordion:first-of-type {
 
 .grey {
   color: #6a6f73;
+  order: 2;
+  margin-left: auto;
 }
 
 .right {
   order: 2;
-  margin-left: auto;
+  margin-left: 0 15px 0 auto;
 }

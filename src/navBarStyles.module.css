@@ -138,6 +138,9 @@ input {
 }
 
 @media only screen and (max-width: 768px) {
+  .header-text {
+    min-width: 100%;
+  }
   .login {
     display: none;
   }
@@ -158,7 +161,7 @@ input {
     display: none;
   }
 
-  .logo {
+  .link-image {
     margin-left: auto;
     order: 2;
   }

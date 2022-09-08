@@ -1,11 +1,14 @@
 import React from "react";
 import whoForStyles from "./whoForStyles.module.css";
-function WhoFor() {
+function WhoFor(props) {
   return (
     <div>
       <h2>Who this course is for:</h2>
       <ul className={whoForStyles["list"]}>
-        <li className={whoForStyles["item"]}>
+        {props.text.split("\n").map((item) => {
+          return <li className={whoForStyles["item"]}>{item}</li>;
+        })}
+        {/* <li className={whoForStyles["item"]}>
           If you want to learn to code through building fun and useful projects,
           then take this course.
         </li>
@@ -20,7 +23,7 @@ function WhoFor() {
         <li className={whoForStyles["item"]}>
           If you want to take ONE COURSE and learn everything you need to know
           about web development, take this course
-        </li>
+        </li> */}
       </ul>
     </div>
   );

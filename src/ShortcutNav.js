@@ -1,8 +1,6 @@
 import React from "react";
 import shortcutNavStyles from "./shortcutNavStyles.module.css";
 function ShortcutNav(props) {
-  console.log("render");
-
   return (
     <div className={shortcutNavStyles[props.myClassName]}>
       <div className={shortcutNavStyles["width-container"]}>

@@ -8,6 +8,7 @@
 .list-item {
   width: 49%;
   display: flex;
+  margin: 7px 0;
 }
 
 .container {

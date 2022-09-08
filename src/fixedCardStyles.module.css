@@ -1,7 +1,7 @@
 .fixed-card {
   position: fixed;
   top: 15%;
-  right: 5%;
+  right: 8%;
   width: 320px;
   animation: sidebar-container--fade-in--29ug6 250ms linear 250ms forwards;
   z-index: 1;
@@ -11,6 +11,18 @@
   background-color: #fff;
 }
 
+.fixed-card-bottom {
+  position: absolute;
+  top: 85.8%;
+  right: 8%;
+  width: 320px;
+  animation: sidebar-container--fade-in--29ug6 250ms linear 250ms forwards;
+  z-index: 1;
+  border-bottom: 1px solid #d1d7dc;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+  background-color: #fff;
+}
 .image {
   width: 100%;
   border: 1px solid #d1d7dc;
@@ -19,7 +31,6 @@
 .below-image {
   padding: 15px;
 }
-
 .price-container {
   display: flex;
 }

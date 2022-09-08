@@ -38,7 +38,8 @@
 .purple {
   color: #cec0fc;
   text-decoration: underline;
-  margin-right: 7px;
+  margin: 0 10px;
+  display: inline-block;
 }
 
 .white {
@@ -49,6 +50,7 @@
 
 .feats-row {
   margin: 10px 0;
+  width: 60%;
 }
 
 .top-text {
