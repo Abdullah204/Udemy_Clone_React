@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import reviewsStyling from "./reviewsStyling.module.css";
@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ReviewsContext } from "./App";
 import Review from "./Review";
-function Reviews() {
+const Reviews = forwardRef((props, ref) => {
   const params = useParams();
   const cid = params.courseid;
   const reviewsContext = useContext(ReviewsContext);
@@ -16,7 +16,7 @@ function Reviews() {
       (el) => rating == 0 || Math.round(el.rating == rating)
     );
     return (
-      <ul className={reviewsStyling["list"]}>
+      <ul ref={ref} className={reviewsStyling["list"]}>
         {filtered.map((el) => {
           let stars = [];
           let i = 0;
@@ -68,6 +68,6 @@ function Reviews() {
       {displayedReviews(rating)}
     </div>
   );
-}
+});
 
 export default Reviews;

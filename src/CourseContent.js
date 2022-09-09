@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 
 import CourseDescription from "./CourseDescription";
 import CourseRequirements from "./CourseRequirements";
@@ -16,11 +16,14 @@ function CourseContent() {
   const cid = params.courseid;
   const detailsContext = useContext(CoursePageContext);
   const homeContext = useContext(HomePageContext);
-
+  const contentRef = useRef();
   return (
     <div className={courseContentStyles["container"]}>
       <div className={courseContentStyles["width-container"]}>
-        <div className={courseContentStyles["border-container"]}>
+        <div
+          ref={contentRef}
+          className={courseContentStyles["border-container"]}
+        >
           <h2>Course Content</h2>
           <div className={courseContentStyles["stats"]}>
             <span>

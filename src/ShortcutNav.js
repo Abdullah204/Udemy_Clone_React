@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import shortcutNavStyles from "./shortcutNavStyles.module.css";
+
 function ShortcutNav(props) {
+  const [clickedIndex, setClickedIndex] = useState(0);
+  let arr = ["Overview", "Curriculum", "Instructor", "Reviews"];
+  function handleClick(key) {
+    setClickedIndex(key);
+  }
   return (
     <div className={shortcutNavStyles[props.myClassName]}>
       <div className={shortcutNavStyles["width-container"]}>
         <ul className={shortcutNavStyles["list"]}>
-          <li className={shortcutNavStyles["button"]}>Overview</li>
-          <li className={shortcutNavStyles["button"]}>Curriculum</li>
-          <li className={shortcutNavStyles["button"]}>Instructor</li>
-          <li className={shortcutNavStyles["button"]}>Reviews</li>
+          {arr.map((el, index) => {
+            return (
+              <li
+                className={
+                  index == clickedIndex
+                    ? shortcutNavStyles["button-clicked"]
+                    : shortcutNavStyles["button"]
+                }
+                onClick={() => handleClick(index)}
+                key={index}
+              >
+                {" "}
+                {el}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>

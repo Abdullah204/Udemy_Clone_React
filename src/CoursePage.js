@@ -53,7 +53,6 @@ function CoursePage() {
     window.addEventListener("scroll", () => {
       // let componentHeight = document.querySelector(".compA").clientHeight;
       let scrolled = window.scrollY;
-      console.log(document.documentElement.offsetHeight - scrolled);
 
       if (scrolled >= 430) {
         setShortcutNavClass("container-sticky");
