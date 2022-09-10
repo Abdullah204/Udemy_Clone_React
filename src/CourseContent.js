@@ -11,12 +11,16 @@ import Reviews from "./Reviews";
 import { CoursePageContext, HomePageContext } from "./App";
 import { useParams } from "react-router-dom";
 //num_published_lectures
+export const ContentRefContext = React.createContext();
+
 function CourseContent() {
   const params = useParams();
   const cid = params.courseid;
   const detailsContext = useContext(CoursePageContext);
   const homeContext = useContext(HomePageContext);
   const contentRef = useRef();
+  const instructorsRef = useRef();
+  const reviewsRef = useRef();
   return (
     <div className={courseContentStyles["container"]}>
       <div className={courseContentStyles["width-container"]}>
@@ -61,9 +65,6 @@ function CourseContent() {
           <CourseRequirements list={detailsContext[cid].details.Requirements} />
           <CourseDescription desc={detailsContext[cid].details.description} />
           <WhoFor text={detailsContext[cid].details.for_who} />
-          <Instructors instructorsData={homeContext[cid].visible_instructors} />
-          <StudentFeedback />
-          <Reviews />
         </div>
       </div>
     </div>

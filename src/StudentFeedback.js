@@ -3,6 +3,7 @@ import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import studentFeedbackStyles from "./studentFeedbackStyles.module.css";
 import { ReviewsContext } from "./App";
+import courseContentStyles from "./courseContentStyles.module.css";
 
 function StudentFeedback() {
   const params = useParams();
@@ -37,111 +38,125 @@ function StudentFeedback() {
   let fivew = Math.round((five / reviewsContext[cid].results.length) * 100);
 
   return (
-    <div>
-      <h2>Student feedback</h2>
-      <div className={studentFeedbackStyles["flex"]}>
-        <div className={studentFeedbackStyles["left"]}>
-          <div className={studentFeedbackStyles["overall"]}>4.4</div>
-          <div>
-            <BsStarFill className={studentFeedbackStyles["star"]} />
-            <BsStarFill className={studentFeedbackStyles["star"]} />
-            <BsStarFill className={studentFeedbackStyles["star"]} />
-            <BsStarFill className={studentFeedbackStyles["star"]} />
-            <BsStarHalf className={studentFeedbackStyles["star"]} />
-          </div>
-          <div className={studentFeedbackStyles["course-rating"]}>
-            Course Rating
-          </div>
-        </div>
-        <div className={studentFeedbackStyles["right"]}>
-          <div className={studentFeedbackStyles["row-container"]}>
-            <div className={studentFeedbackStyles["bar-container"]}>
-              <span className={studentFeedbackStyles["bar"]}>
-                <span
-                  className={studentFeedbackStyles["ratio"]}
-                  style={{ width: fivew + "%" }}
-                ></span>
-              </span>
-              <span className={studentFeedbackStyles["stars"]}>
+    <div className={courseContentStyles["container"]}>
+      <div className={courseContentStyles["width-container"]}>
+        <div className={courseContentStyles["border-container"]}>
+          <h2>Student feedback</h2>
+          <div className={studentFeedbackStyles["flex"]}>
+            <div className={studentFeedbackStyles["left"]}>
+              <div className={studentFeedbackStyles["overall"]}>4.4</div>
+              <div>
                 <BsStarFill className={studentFeedbackStyles["star"]} />
                 <BsStarFill className={studentFeedbackStyles["star"]} />
                 <BsStarFill className={studentFeedbackStyles["star"]} />
                 <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-              </span>
-              <span className={studentFeedbackStyles["score"]}>{fivew}%</span>
+                <BsStarHalf className={studentFeedbackStyles["star"]} />
+              </div>
+              <div className={studentFeedbackStyles["course-rating"]}>
+                Course Rating
+              </div>
             </div>
-          </div>
-          <div className={studentFeedbackStyles["row-container"]}>
-            <div className={studentFeedbackStyles["bar-container"]}>
-              <span className={studentFeedbackStyles["bar"]}>
-                <span
-                  className={studentFeedbackStyles["ratio"]}
-                  style={{ width: fourw + "%" }}
-                ></span>
-              </span>
-              <span className={studentFeedbackStyles["stars"]}>
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-              </span>
-              <span className={studentFeedbackStyles["score"]}>{fourw}%</span>
-            </div>
-          </div>
-          <div className={studentFeedbackStyles["row-container"]}>
-            <div className={studentFeedbackStyles["bar-container"]}>
-              <span className={studentFeedbackStyles["bar"]}>
-                <span
-                  className={studentFeedbackStyles["ratio"]}
-                  style={{ width: threew + "%" }}
-                ></span>
-              </span>
-              <span className={studentFeedbackStyles["stars"]}>
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-              </span>
-              <span className={studentFeedbackStyles["score"]}>{threew}%</span>
-            </div>
-          </div>
-          <div className={studentFeedbackStyles["row-container"]}>
-            <div className={studentFeedbackStyles["bar-container"]}>
-              <span className={studentFeedbackStyles["bar"]}>
-                <span
-                  className={studentFeedbackStyles["ratio"]}
-                  style={{ width: twow + "%" }}
-                ></span>
-              </span>
-              <span className={studentFeedbackStyles["stars"]}>
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-              </span>
-              <span className={studentFeedbackStyles["score"]}>{twow}%</span>
-            </div>
-          </div>
-          <div className={studentFeedbackStyles["row-container"]}>
-            <div className={studentFeedbackStyles["bar-container"]}>
-              <span className={studentFeedbackStyles["bar"]}>
-                <span
-                  className={studentFeedbackStyles["ratio"]}
-                  style={{ width: onew + "%" }}
-                ></span>
-              </span>
-              <span className={studentFeedbackStyles["stars"]}>
-                <BsStarFill className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-                <BsStar className={studentFeedbackStyles["star"]} />
-              </span>
-              <span className={studentFeedbackStyles["score"]}>{onew}%</span>
+            <div className={studentFeedbackStyles["right"]}>
+              <div className={studentFeedbackStyles["row-container"]}>
+                <div className={studentFeedbackStyles["bar-container"]}>
+                  <span className={studentFeedbackStyles["bar"]}>
+                    <span
+                      className={studentFeedbackStyles["ratio"]}
+                      style={{ width: fivew + "%" }}
+                    ></span>
+                  </span>
+                  <span className={studentFeedbackStyles["stars"]}>
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                  </span>
+                  <span className={studentFeedbackStyles["score"]}>
+                    {fivew}%
+                  </span>
+                </div>
+              </div>
+              <div className={studentFeedbackStyles["row-container"]}>
+                <div className={studentFeedbackStyles["bar-container"]}>
+                  <span className={studentFeedbackStyles["bar"]}>
+                    <span
+                      className={studentFeedbackStyles["ratio"]}
+                      style={{ width: fourw + "%" }}
+                    ></span>
+                  </span>
+                  <span className={studentFeedbackStyles["stars"]}>
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                  </span>
+                  <span className={studentFeedbackStyles["score"]}>
+                    {fourw}%
+                  </span>
+                </div>
+              </div>
+              <div className={studentFeedbackStyles["row-container"]}>
+                <div className={studentFeedbackStyles["bar-container"]}>
+                  <span className={studentFeedbackStyles["bar"]}>
+                    <span
+                      className={studentFeedbackStyles["ratio"]}
+                      style={{ width: threew + "%" }}
+                    ></span>
+                  </span>
+                  <span className={studentFeedbackStyles["stars"]}>
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                  </span>
+                  <span className={studentFeedbackStyles["score"]}>
+                    {threew}%
+                  </span>
+                </div>
+              </div>
+              <div className={studentFeedbackStyles["row-container"]}>
+                <div className={studentFeedbackStyles["bar-container"]}>
+                  <span className={studentFeedbackStyles["bar"]}>
+                    <span
+                      className={studentFeedbackStyles["ratio"]}
+                      style={{ width: twow + "%" }}
+                    ></span>
+                  </span>
+                  <span className={studentFeedbackStyles["stars"]}>
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                  </span>
+                  <span className={studentFeedbackStyles["score"]}>
+                    {twow}%
+                  </span>
+                </div>
+              </div>
+              <div className={studentFeedbackStyles["row-container"]}>
+                <div className={studentFeedbackStyles["bar-container"]}>
+                  <span className={studentFeedbackStyles["bar"]}>
+                    <span
+                      className={studentFeedbackStyles["ratio"]}
+                      style={{ width: onew + "%" }}
+                    ></span>
+                  </span>
+                  <span className={studentFeedbackStyles["stars"]}>
+                    <BsStarFill className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                    <BsStar className={studentFeedbackStyles["star"]} />
+                  </span>
+                  <span className={studentFeedbackStyles["score"]}>
+                    {onew}%
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

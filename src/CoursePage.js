@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import TopContainer from "./TopContainer";
 import ShortcutNav from "./ShortcutNav";
 import WhatLearn from "./WhatLearn";
@@ -8,6 +8,11 @@ import FixedCard from "./FixedCard";
 import BehindNav from "./BehindNav";
 import { useParams } from "react-router-dom";
 import CoursePageStyles from "./CoursePageStyles.module.css";
+import Instructors from "./Instructors";
+import StudentFeedback from "./StudentFeedback";
+import HomePageContext from "./App";
+import Reviews from "./Reviews";
+export const RefContext = React.createContext();
 function CoursePage() {
   const [shortcutNavClass, setShortcutNavClass] = useState("container");
   const [topCard, setTopCard] = useState(true);
@@ -15,45 +20,15 @@ function CoursePage() {
   const [botCard, setBotCard] = useState(false);
   const params = useParams();
   const cid = params.courseid;
-
-  //  useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     // let componentHeight = document.querySelector(".compA").clientHeight;
-  //     let scrolled = window.scrollY;
-
-  //     console.log(scrolled);
-
-  //     if (scrolled >= 430) {
-  //       setShortcutNavClass("container-sticky");
-  //       setFixedImage(false);
-  //     } else if (scrolled < 430) {
-  //       setShortcutNavClass("container");
-  //       setFixedImage(true);
-  //     }
-  //   });
-
-  //   return () => {
-  //     window.removeEventListener("scroll", () => {
-  //       // let componentHeight = document.querySelector(".compA").clientHeight;
-  //       let scrolled = window.scrollY;
-
-  //       console.log(scrolled);
-
-  //       if (scrolled >= 430) {
-  //         setShortcutNavClass("container-sticky");
-  //         setFixedImage(false);
-  //       } else if (scrolled < 430) {
-  //         setShortcutNavClass("container");
-  //         setFixedImage(true);
-  //       }
-  //     });
-  //   };
-  // }, [shortcutNavClass]);
+  const whatLearnRef = useRef();
+  const contentRef = useRef();
+  const instructorsRef = useRef();
+  const reviewsRef = useRef();
+  const homeContext = useContext(HomePageContext);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // let componentHeight = document.querySelector(".compA").clientHeight;
       let scrolled = window.scrollY;
-
       if (scrolled >= 430) {
         setShortcutNavClass("container-sticky");
       } else {
@@ -75,11 +50,11 @@ function CoursePage() {
         }
       }
     });
+
     return () => {
       window.removeEventListener("scroll", () => {
         // let componentHeight = document.querySelector(".compA").clientHeight;
         let scrolled = window.scrollY;
-        console.log(document.documentElement.offsetHeight - scrolled);
 
         if (scrolled >= 430) {
           setShortcutNavClass("container-sticky");
@@ -112,14 +87,31 @@ function CoursePage() {
 
       <TopContainer />
 
-      <ShortcutNav myClassName={shortcutNavClass} />
-      <WhatLearn />
-      <CourseContent />
+      <ShortcutNav
+        myClassName={shortcutNavClass}
+        refparams={[whatLearnRef, contentRef, instructorsRef, reviewsRef]}
+      />
+
+      <div ref={whatLearnRef}>
+        <WhatLearn />
+      </div>
+      <div ref={contentRef}>
+        <CourseContent />
+      </div>
+      <div ref={instructorsRef}>
+        <Instructors />
+      </div>
+
+      <StudentFeedback />
       <FixedCard
         viewImage={true}
         view={botCard}
         cardClassName="fixed-card-bottom"
       />
+      <div ref={reviewsRef}>
+        <Reviews />
+      </div>
+
       <CourseFooter />
       <BehindNav />
     </div>

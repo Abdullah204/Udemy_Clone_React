@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ReviewsContext } from "./App";
 import Review from "./Review";
+import courseContentStyles from "./courseContentStyles.module.css";
+
 const Reviews = forwardRef((props, ref) => {
   const params = useParams();
   const cid = params.courseid;
@@ -38,34 +40,38 @@ const Reviews = forwardRef((props, ref) => {
     setRating(chosen);
   };
   return (
-    <div>
-      <h2>Reviews</h2>
-      <div className={reviewsStyling["search-container"]}>
-        <form className={reviewsStyling["form"]}>
-          <input
-            placeholder="Search reviews"
-            className={reviewsStyling["input"]}
-          ></input>
-          <button className={reviewsStyling["button"]}>
-            <FaSearch className={reviewsStyling["icon"]} />
-          </button>
-        </form>
-        <select
-          placeholder="All stars"
-          name="ratings-filter"
-          id="ratings-filter"
-          className={reviewsStyling["select"]}
-          onChange={handleSelect}
-        >
-          <option value="0">All ratings</option>
-          <option value="5">Five Stars</option>
-          <option value="4">Four Stars</option>
-          <option value="3">Three Stars</option>
-          <option value="2">Two Stars</option>
-          <option value="1">One Stars</option>
-        </select>
+    <div className={courseContentStyles["container"]}>
+      <div className={courseContentStyles["width-container"]}>
+        <div className={courseContentStyles["border-container"]}>
+          <h2>Reviews</h2>
+          <div className={reviewsStyling["search-container"]}>
+            <form className={reviewsStyling["form"]}>
+              <input
+                placeholder="Search reviews"
+                className={reviewsStyling["input"]}
+              ></input>
+              <button className={reviewsStyling["button"]}>
+                <FaSearch className={reviewsStyling["icon"]} />
+              </button>
+            </form>
+            <select
+              placeholder="All stars"
+              name="ratings-filter"
+              id="ratings-filter"
+              className={reviewsStyling["select"]}
+              onChange={handleSelect}
+            >
+              <option value="0">All ratings</option>
+              <option value="5">Five Stars</option>
+              <option value="4">Four Stars</option>
+              <option value="3">Three Stars</option>
+              <option value="2">Two Stars</option>
+              <option value="1">One Stars</option>
+            </select>
+          </div>
+          {displayedReviews(rating)}
+        </div>
       </div>
-      {displayedReviews(rating)}
     </div>
   );
 });

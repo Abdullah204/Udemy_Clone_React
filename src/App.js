@@ -11,8 +11,8 @@ export const ReviewsContext = React.createContext();
 export const DataContext = React.createContext();
 function App() {
   const [homePageData, setHomePageData] = useState({});
-  const [coursePageData, setCoursePageData] = useState([]);
-  const [reviewsData, setReviewsData] = useState([]);
+  const [coursePageData, setCoursePageData] = useState({});
+  const [reviewsData, setReviewsData] = useState({});
   const [dataLoaded, setDataLoaded] = useState(false);
   useEffect(() => {
     axios.get("http://localhost:3000/homepage").then((response) => {
@@ -26,6 +26,7 @@ function App() {
       setReviewsData(response.data);
     });
   }, []);
+
   return (
     <>
       <NavBar />
