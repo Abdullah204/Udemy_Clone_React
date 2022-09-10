@@ -1,7 +1,15 @@
 .container {
   padding: 0 65px;
 }
-
+.button {
+  width: 100%;
+  background-color: white;
+  margin-top: 16px;
+  border: 1px solid #1c1d1f;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
 .border-container {
   max-width: 700px;
 }

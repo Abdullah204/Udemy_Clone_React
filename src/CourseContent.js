@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import CourseDescription from "./CourseDescription";
 import CourseRequirements from "./CourseRequirements";
@@ -17,10 +17,28 @@ function CourseContent() {
   const params = useParams();
   const cid = params.courseid;
   const detailsContext = useContext(CoursePageContext);
-  const homeContext = useContext(HomePageContext);
   const contentRef = useRef();
-  const instructorsRef = useRef();
-  const reviewsRef = useRef();
+  const [extended, setExtended] = useState(false);
+  const handleShowMoreSections = () => {
+    setExtended(true);
+  };
+  const sections = detailsContext[cid].curriculum_context.data.sections.map(
+    (section) => {
+      return <MyAccordion data={section} />;
+    }
+  );
+  const button = (
+    <button
+      className={
+        sections.length > 10
+          ? courseContentStyles["button"]
+          : courseContentStyles["button-hidden"]
+      }
+      onClick={handleShowMoreSections}
+    >
+      {sections.length - 10} more sections
+    </button>
+  );
   return (
     <div className={courseContentStyles["container"]}>
       <div className={courseContentStyles["width-container"]}>
@@ -56,11 +74,12 @@ function CourseContent() {
             </button>
           </div>
           <div className={courseContentStyles["sections"]}>
-            {detailsContext[cid].curriculum_context.data.sections.map(
-              (section) => {
-                return <MyAccordion data={section} />;
-              }
-            )}
+            {sections.length > 10 ? sections.slice(0, 10) : sections}
+            {extended
+              ? sections.slice(10, sections.length)
+              : sections.length > 10
+              ? button
+              : ""}
           </div>
           <CourseRequirements list={detailsContext[cid].details.Requirements} />
           <CourseDescription desc={detailsContext[cid].details.description} />

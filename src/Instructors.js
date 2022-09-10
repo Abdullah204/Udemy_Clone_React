@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext } from "react";
+import React, { useRef, useContext, useState } from "react";
 import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import { BsPeopleFill } from "react-icons/bs";
 import { GiRibbonMedal } from "react-icons/gi";
@@ -6,11 +6,34 @@ import instructorStyles from "./instructorStyles.module.css";
 import { HomePageContext } from "./App";
 import { useParams } from "react-router-dom";
 import courseContentStyles from "./courseContentStyles.module.css";
+import {
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
 
 function Instructors() {
   const homeContext = useContext(HomePageContext);
   const params = useParams();
   const cid = params.courseid;
+  const [showMore, setShowMore] = useState(true);
+  const handleShowMore = () => {
+    setShowMore(!showMore);
+  };
+  const arrow = showMore ? (
+    <MdOutlineKeyboardArrowDown />
+  ) : (
+    <MdOutlineKeyboardArrowUp />
+  );
+  const showbutton = (
+    <button
+      className={instructorStyles[showMore ? "show-more" : "show-less"]}
+      onClick={handleShowMore}
+    >
+      {showMore ? "show more " : "show less "}
+      {arrow}
+    </button>
+  );
+
   return (
     <div className={courseContentStyles["container"]}>
       <div className={courseContentStyles["width-container"]}>
@@ -53,7 +76,12 @@ function Instructors() {
                       </div>
                     </div>
                   </div>
-                  <p className={instructorStyles["p"]}>{item.description}</p>
+                  <p
+                    className={instructorStyles[showMore ? "p-show-more" : "p"]}
+                  >
+                    {item.description}
+                    {item.description.length > 500 ? showbutton : ""}
+                  </p>
                 </li>
               );
             })}

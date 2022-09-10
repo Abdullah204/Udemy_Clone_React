@@ -34,6 +34,40 @@
 }
 
 .p {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 300;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-show-more {
+  font-size: 17px;
+  font-weight: 300;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.show-more {
+  text-align: left;
+  color: #5624d0;
+  font-size: 15px;
+  font-weight: 600;
+  position: absolute;
+  display: block;
+  top: 80px;
+  width: 100%;
+  background-color: white;
+  border: none;
+}
+
+.show-less {
+  text-align: left;
+  color: #5624d0;
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border: none;
 }

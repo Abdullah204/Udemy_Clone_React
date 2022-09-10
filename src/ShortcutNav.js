@@ -6,12 +6,6 @@ function ShortcutNav(props) {
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      props.refparams.map((el) =>
-        console.log(
-          el.current.offsetTop - window.scrollY + el.current.offsetHeight
-        )
-      );
-
       if (
         props.refparams[0].current.offsetTop -
           window.scrollY +
