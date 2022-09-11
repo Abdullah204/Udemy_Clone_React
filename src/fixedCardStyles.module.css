@@ -13,7 +13,7 @@
 
 .fixed-card-bottom {
   position: absolute;
-  top: 85.8%;
+  top: 83%;
   right: 4%;
   width: 320px;
   animation: sidebar-container--fade-in--29ug6 250ms linear 250ms forwards;
