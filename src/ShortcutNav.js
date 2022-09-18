@@ -38,20 +38,6 @@ function ShortcutNav(props) {
       ) {
         setClickedIndex(0);
       }
-
-      // return () => {
-      //   window.removeEventListener("scroll", () => {
-      //     if (props.refparams[0].current.offsetTop - 100 > 0) {
-      //       setClickedIndex(0);
-      //     } else if (props.refparams[1].current.offsetTop - 100 > 0) {
-      //       setClickedIndex(1);
-      //     } else if (props.refparams[2].current.offsetTop - 100 > 0) {
-      //       setClickedIndex(2);
-      //     } else {
-      //       setClickedIndex(3);
-      //     }
-      //   });
-      // };
     });
   });
   let arr = ["Overview", "Curriculum", "Instructor", "Reviews"];
