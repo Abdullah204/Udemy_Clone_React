@@ -14,11 +14,11 @@ function CourseHover(props) {
       </div>
       <div className={courseHoverStyles["desc"]}>{props.data.headline}</div>
       <ul className={courseHoverStyles["list"]}>
-        {props.data.objectives_summary.map((el) => {
+        {props.data.objectives_summary.map((item) => {
           return (
             <li className={courseHoverStyles["item"]}>
               <BsCheck2 className={courseHoverStyles["check"]} />
-              {el}
+              {item}
             </li>
           );
         })}
