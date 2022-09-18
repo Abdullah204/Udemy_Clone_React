@@ -1,6 +1,7 @@
 import React from "react";
 import myAcordionStyles from "./myAcordionStyles.module.css";
-
+import { BsPlayCircleFill } from "react-icons/bs";
+import { AiOutlineFile } from "react-icons/ai";
 function AccordionItem(props) {
   let item = props.data;
   let res = [];

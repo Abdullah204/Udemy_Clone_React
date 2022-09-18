@@ -4,9 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import myAcordionStyles from "./myAcordionStyles.module.css";
-import { BsPlayCircleFill } from "react-icons/bs";
-import { AiOutlineFile } from "react-icons/ai";
-import { createMuiTheme } from "@mui/material";
+
 import AccordionItem from "./AccordionItem";
 function MyAccordion(props) {
   let hours =

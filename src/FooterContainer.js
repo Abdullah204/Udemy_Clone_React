@@ -7,7 +7,7 @@ function FooterContainer() {
   return (
     <div className={footerContainerStyles["container"]}>
       <Tabs />
-      <LearningTab coursesData={courseArray} title={tabTitle} paragraph={par} />
+      <LearningTab title={tabTitle} paragraph={par} />
     </div>
   );
 }
