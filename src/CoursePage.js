@@ -53,7 +53,6 @@ function CoursePage() {
 
     return () => {
       window.removeEventListener("scroll", () => {
-        // let componentHeight = document.querySelector(".compA").clientHeight;
         let scrolled = window.scrollY;
 
         if (scrolled >= 430) {
