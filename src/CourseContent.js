@@ -27,6 +27,17 @@ function CourseContent() {
       return <MyAccordion data={section} />;
     }
   );
+  let hours = Math.round(
+    detailsContext[cid].curriculum_context.data
+      .estimated_content_length_in_seconds / 3600
+  );
+  let minutes = Math.round(
+    (detailsContext[cid].curriculum_context.data
+      .estimated_content_length_in_seconds /
+      60) %
+      60
+  );
+
   const button = (
     <button
       className={
@@ -55,19 +66,7 @@ function CourseContent() {
               }{" "}
               Lectures •{" "}
               {detailsContext[cid].curriculum_context.data.sections.length}{" "}
-              sections •{" "}
-              {Math.round(
-                detailsContext[cid].curriculum_context.data
-                  .estimated_content_length_in_seconds / 3600
-              )}
-              h{" "}
-              {Math.round(
-                (detailsContext[cid].curriculum_context.data
-                  .estimated_content_length_in_seconds /
-                  60) %
-                  60
-              )}
-              m total length
+              sections • {hours}h {minutes}m total length
             </span>
             <button className={courseContentStyles["expand"]}>
               Expand All Sections
