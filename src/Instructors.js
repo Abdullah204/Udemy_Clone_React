@@ -15,6 +15,9 @@ function Instructors() {
   const homeContext = useContext(HomePageContext);
   const params = useParams();
   const cid = params.courseid;
+  console.log(cid);
+  console.log(homeContext[cid]);
+  console.log(homeContext[cid].visible_instructors);
   const [showMore, setShowMore] = useState(true);
   const handleShowMore = () => {
     setShowMore(!showMore);
