@@ -1,10 +1,10 @@
 import React, { useState, useRef } from "react";
-import "./index.css";
+import "/Users/abdullahahmad/my-app/src/index.css";
 import courseStyles from "./courseStyles.module.css";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import CourseHover from "./CourseHover";
+import CourseHover from "./CourseHover/CourseHover";
 // description :
 // props : one Object (courseData) including all data related to course
 // like title , image , rating . .etc

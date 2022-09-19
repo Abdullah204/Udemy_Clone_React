@@ -1,12 +1,12 @@
 import React, { forwardRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { BsStar, BsStarFill } from "react-icons/bs";
-import reviewsStyling from "./reviewsStyling.module.css";
+import reviewsStyling from "/Users/abdullahahmad/my-app/src/Components/CoursePage/Reviews/reviewsStyling.module.css";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { ReviewsContext } from "./App";
-import Review from "./Review";
-import courseContentStyles from "./courseContentStyles.module.css";
+import { ReviewsContext } from "../../../App";
+import Review from "./Review/Review";
+import courseContentStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/courseContentStyles.module.css";
 
 const Reviews = forwardRef((props, ref) => {
   const params = useParams();

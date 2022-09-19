@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
+import NavBar from "./Components/NavBar/NavBar";
+import Footer from "./Components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import CoursePage from "./CoursePage";
+import HomePage from "./Components/HomePage/HomePage";
+import CoursePage from "./Components/CoursePage/CoursePage";
 import axios from "axios";
 export const HomePageContext = React.createContext();
 export const CoursePageContext = React.createContext();

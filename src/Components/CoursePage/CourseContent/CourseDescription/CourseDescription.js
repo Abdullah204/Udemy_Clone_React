@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import instructorStyles from "./instructorStyles.module.css";
+import instructorStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/Instructors/instructorStyles.module.css";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,

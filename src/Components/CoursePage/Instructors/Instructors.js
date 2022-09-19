@@ -3,9 +3,9 @@ import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import { BsPeopleFill } from "react-icons/bs";
 import { GiRibbonMedal } from "react-icons/gi";
 import instructorStyles from "./instructorStyles.module.css";
-import { HomePageContext } from "./App";
+import { HomePageContext } from "../../../App";
 import { useParams } from "react-router-dom";
-import courseContentStyles from "./courseContentStyles.module.css";
+import courseContentStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/courseContentStyles.module.css";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,

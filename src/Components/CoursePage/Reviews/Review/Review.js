@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import reviewsStyling from "./reviewsStyling.module.css";
+import reviewsStyling from "/Users/abdullahahmad/my-app/src/Components/CoursePage/Reviews/reviewsStyling.module.css";
 import { BiLike, BiDislike } from "react-icons/bi";
 
 function Review(props) {

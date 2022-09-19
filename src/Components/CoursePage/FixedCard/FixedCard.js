@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { MdAccessAlarms } from "react-icons/md";
 import fixedCardStyles from "./fixedCardStyles.module.css";
-import { CoursePageContext, HomePageContext } from "./App";
+import {
+  CoursePageContext,
+  HomePageContext,
+} from "/Users/abdullahahmad/my-app/src/App.js";
 
 import { useParams } from "react-router-dom";
 function FixedCard(props) {

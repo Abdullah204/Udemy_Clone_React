@@ -5,7 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import myAcordionStyles from "./myAcordionStyles.module.css";
 
-import AccordionItem from "./AccordionItem";
+import AccordionItem from "./AccordionItem/AccordionItem";
 function MyAccordion(props) {
   let hours =
     Math.round(props.data.content_length / 3600) > 0

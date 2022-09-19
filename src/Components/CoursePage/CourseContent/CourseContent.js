@@ -1,16 +1,15 @@
 import React, { useContext, useRef, useState } from "react";
 
-import CourseDescription from "./CourseDescription";
-import CourseRequirements from "./CourseRequirements";
-import WhoFor from "./WhoFor";
+import CourseDescription from "./CourseDescription/CourseDescription";
+import CourseRequirements from "./CourseRequirements/CourseRequirements";
+import WhoFor from "./WhoFor/WhoFor";
 import courseContentStyles from "./courseContentStyles.module.css";
-import MyAccordion from "./MyAccordion";
-import Instructors from "./Instructors";
-import StudentFeedback from "./StudentFeedback";
-import Reviews from "./Reviews";
-import { CoursePageContext, HomePageContext } from "./App";
+import MyAccordion from "./MyAccordion/MyAccordion";
+import Instructors from "../Instructors/Instructors";
+import StudentFeedback from "../StudentFeedback/StudentFeedback";
+import Reviews from "../Reviews/Reviews";
+import { CoursePageContext, HomePageContext } from "../../../App";
 import { useParams } from "react-router-dom";
-//num_published_lectures
 export const ContentRefContext = React.createContext();
 
 function CourseContent() {

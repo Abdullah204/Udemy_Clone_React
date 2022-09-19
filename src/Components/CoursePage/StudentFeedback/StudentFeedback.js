@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import studentFeedbackStyles from "./studentFeedbackStyles.module.css";
-import { ReviewsContext } from "./App";
-import courseContentStyles from "./courseContentStyles.module.css";
+import { ReviewsContext } from "../../../App";
+import courseContentStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/courseContentStyles.module.css";
 
 function StudentFeedback() {
   const params = useParams();

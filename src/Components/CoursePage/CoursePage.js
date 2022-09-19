@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import TopContainer from "./TopContainer";
-import ShortcutNav from "./ShortcutNav";
-import WhatLearn from "./WhatLearn";
-import CourseContent from "./CourseContent";
-import CourseFooter from "./CourseFooter";
-import FixedCard from "./FixedCard";
-import BehindNav from "./BehindNav";
+import TopContainer from "./TopContainer/TopContainer";
+import ShortcutNav from "./ShortcutNav/ShortcutNav";
+import WhatLearn from "./WhatLearn/WhatLearn";
+import CourseContent from "./CourseContent/CourseContent";
+import CourseFooter from "./CourseFooter/CourseFooter";
+import FixedCard from "./FixedCard/FixedCard";
+import BehindNav from "./BehindNav/BehindNav";
 import { useParams } from "react-router-dom";
 import CoursePageStyles from "./CoursePageStyles.module.css";
-import Instructors from "./Instructors";
-import StudentFeedback from "./StudentFeedback";
-import HomePageContext from "./App";
-import Reviews from "./Reviews";
+import Instructors from "./Instructors/Instructors";
+import StudentFeedback from "./StudentFeedback/StudentFeedback";
+import HomePageContext from "/Users/abdullahahmad/my-app/src/App.js";
+import Reviews from "./Reviews/Reviews";
 export const RefContext = React.createContext();
 function CoursePage() {
   const [shortcutNavClass, setShortcutNavClass] = useState("container");

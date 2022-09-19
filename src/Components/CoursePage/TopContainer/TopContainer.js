@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import TopContainerStyles from "./topContainerStyles.module.css";
-import { CoursePageContext, HomePageContext } from "./App";
+import { CoursePageContext, HomePageContext } from "../../../App";
 import {
   MdStar,
   MdStarHalf,

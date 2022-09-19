@@ -1,6 +1,6 @@
 import React from "react";
-import Tabs from "./Tabs";
-import LearningTab from "./LearningTab";
+import Tabs from "./Tabs/Tabs";
+import LearningTab from "./LearningTab/LearningTab";
 import footerContainerStyles from "./footerContainerStyles.module.css";
 
 function FooterContainer() {
