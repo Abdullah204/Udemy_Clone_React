@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
-import courseHoverStyles from "./courseHoverStyles.module.css";
+import courseHoverStyles from "./CourseHover.module.css";
 import { BsCheck2 } from "react-icons/bs";
 function CourseHover(props) {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import myAcordionStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/MyAccordion/myAcordionStyles.module.css";
+import myAcordionStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/MyAccordion/MyAccordion.module.css";
 import { BsPlayCircleFill } from "react-icons/bs";
 import { AiOutlineFile } from "react-icons/ai";
 function AccordionItem(props) {

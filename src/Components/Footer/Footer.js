@@ -1,5 +1,5 @@
 import React from "react";
-import footerStyles from "./footerStyles.module.css";
+import footerStyles from "./Footer.module.css";
 import { FaGlobe } from "react-icons/fa";
 import { Link } from "react-router-dom";
 

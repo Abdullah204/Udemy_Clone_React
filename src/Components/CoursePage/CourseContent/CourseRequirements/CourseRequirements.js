@@ -1,5 +1,5 @@
 import React from "react";
-import CourseRequirementsStyles from "./CourseRequirementsStyles.module.css";
+import CourseRequirementsStyles from "./CourseRequirements.module.css";
 
 function CourseRequirements(props) {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import whoForStyles from "./whoForStyles.module.css";
+import whoForStyles from "./WhoFor.module.css";
 function WhoFor(props) {
   return (
     <div>

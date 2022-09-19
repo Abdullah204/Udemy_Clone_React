@@ -3,7 +3,7 @@ import React, { useContext, useRef, useState } from "react";
 import CourseDescription from "./CourseDescription/CourseDescription";
 import CourseRequirements from "./CourseRequirements/CourseRequirements";
 import WhoFor from "./WhoFor/WhoFor";
-import courseContentStyles from "./courseContentStyles.module.css";
+import courseContentStyles from "./CourseContent.module.css";
 import MyAccordion from "./MyAccordion/MyAccordion";
 import Instructors from "../Instructors/Instructors";
 import StudentFeedback from "../StudentFeedback/StudentFeedback";

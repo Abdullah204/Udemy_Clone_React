@@ -2,10 +2,10 @@ import React, { useRef, useContext, useState } from "react";
 import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import { BsPeopleFill } from "react-icons/bs";
 import { GiRibbonMedal } from "react-icons/gi";
-import instructorStyles from "./instructorStyles.module.css";
+import instructorStyles from "./Instructors.module.css";
 import { HomePageContext } from "../../../App";
 import { useParams } from "react-router-dom";
-import courseContentStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/courseContentStyles.module.css";
+import courseContentStyles from "/Users/abdullahahmad/my-app/src/Components/CoursePage/CourseContent/CourseContent.module.css";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
@@ -15,9 +15,6 @@ function Instructors() {
   const homeContext = useContext(HomePageContext);
   const params = useParams();
   const cid = params.courseid;
-  console.log(cid);
-  console.log(homeContext[cid]);
-  console.log(homeContext[cid].visible_instructors);
   const [showMore, setShowMore] = useState(true);
   const handleShowMore = () => {
     setShowMore(!showMore);

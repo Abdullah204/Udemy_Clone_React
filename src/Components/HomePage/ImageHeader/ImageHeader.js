@@ -1,5 +1,5 @@
 import React from "react";
-import imageHeaderStyles from "./imageHeaderStyles.module.css";
+import imageHeaderStyles from "./ImageHeader.module.css";
 
 function ImageHeader() {
   return (

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
+
 import TopContainer from "./TopContainer/TopContainer";
 import ShortcutNav from "./ShortcutNav/ShortcutNav";
 import WhatLearn from "./WhatLearn/WhatLearn";
@@ -7,7 +8,7 @@ import CourseFooter from "./CourseFooter/CourseFooter";
 import FixedCard from "./FixedCard/FixedCard";
 import BehindNav from "./BehindNav/BehindNav";
 import { useParams } from "react-router-dom";
-import CoursePageStyles from "./CoursePageStyles.module.css";
+import CoursePageStyles from "./CoursePage.module.css";
 import Instructors from "./Instructors/Instructors";
 import StudentFeedback from "./StudentFeedback/StudentFeedback";
 import HomePageContext from "/Users/abdullahahmad/my-app/src/App.js";

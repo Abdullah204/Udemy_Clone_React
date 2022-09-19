@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import TopContainerStyles from "./topContainerStyles.module.css";
+import TopContainerStyles from "./TopContainer.module.css";
 import { CoursePageContext, HomePageContext } from "../../../App";
 import {
   MdStar,

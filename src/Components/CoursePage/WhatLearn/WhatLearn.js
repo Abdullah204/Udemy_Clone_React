@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import React, { forwardRef } from "react";
-import whatLearn from "./whatLearn.module.css";
+import whatLearn from "./WhatLearn.module.css";
 import { BsCheck2 } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import { CoursePageContext, HomePageContext } from "../../../App";

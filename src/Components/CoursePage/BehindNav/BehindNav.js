@@ -1,6 +1,6 @@
 import React from "react";
 import { BsStarFill } from "react-icons/bs";
-import behindNavStyles from "./behindNavStyles.module.css";
+import behindNavStyles from "./BehindNav.module.css";
 function BehindNav() {
   return (
     <div className={behindNavStyles["behind-nav"]}>

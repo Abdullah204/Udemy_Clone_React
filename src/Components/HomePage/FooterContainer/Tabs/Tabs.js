@@ -1,5 +1,5 @@
 import React from "react";
-import tabsStyles from "./tabsStyles.module.css";
+import tabsStyles from "./Tabs.module.css";
 function Tabs() {
   return (
     <div className={tabsStyles["container"]}>

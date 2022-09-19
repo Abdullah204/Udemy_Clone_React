@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import navBarStyles from "./navBarStyles.module.css";
+import navBarStyles from "./NavBar.module.css";
 import { useSearchParams } from "react-router-dom";
 import { BsCart3, BsGlobe, BsSearch } from "react-icons/bs";
 import { FaBars } from "react-icons/fa";

@@ -1,11 +1,15 @@
 import React from "react";
-import courseFooterStyles from "./courseFooterStyles.module.css";
+
+import courseFooterStyles from "./CourseFooter.module.css";
 function CourseFooter() {
   return (
     <div className={courseFooterStyles["container"]}>
       <h5 className={courseFooterStyles["text"]}>
         Top companies choose
-        <span className={courseFooterStyles["business"]}> Udemy Business</span>{" "}
+        <span className={courseFooterStyles["business"]}>
+          {" "}
+          Udemy Business
+        </span>{" "}
         to build in-demand career skills.
       </h5>
       <div className={courseFooterStyles["company-images"]}>

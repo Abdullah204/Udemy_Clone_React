@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { MdAccessAlarms } from "react-icons/md";
-import fixedCardStyles from "./fixedCardStyles.module.css";
+import fixedCardStyles from "./FixedCard.module.css";
 import {
   CoursePageContext,
   HomePageContext,

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "/Users/abdullahahmad/my-app/src/index.css";
-import courseStyles from "./courseStyles.module.css";
+import courseStyles from "./Course.module.css";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { Link } from "react-router-dom";

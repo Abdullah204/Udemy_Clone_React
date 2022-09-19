@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { DataContext, HomePageContext } from "../../../../App";
 import "/Users/abdullahahmad/my-app/src/index.css";
-import learningTabStyles from "./learningTabStyles.module.css";
+import learningTabStyles from "./LearningTab.module.css";
 import Course from "./Course/Course.js";
 import MoonLoader from "react-spinners/MoonLoader";
 import { useSearchParams } from "react-router-dom";

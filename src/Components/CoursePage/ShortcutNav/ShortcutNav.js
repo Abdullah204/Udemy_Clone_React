@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import shortcutNavStyles from "./shortcutNavStyles.module.css";
+import shortcutNavStyles from "./ShortcutNav.module.css";
 
 function ShortcutNav(props) {
   const [clickedIndex, setClickedIndex] = useState(0);

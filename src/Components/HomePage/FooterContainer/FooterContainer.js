@@ -1,7 +1,7 @@
 import React from "react";
 import Tabs from "./Tabs/Tabs";
 import LearningTab from "./LearningTab/LearningTab";
-import footerContainerStyles from "./footerContainerStyles.module.css";
+import footerContainerStyles from "./FooterContainer.module.css";
 
 function FooterContainer() {
   return (
