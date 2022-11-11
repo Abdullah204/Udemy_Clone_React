@@ -1,0 +1,184 @@
+.top-container {
+  background-color: #1c1d1f;
+  padding: 2.5rem 4rem;
+}
+
+.learning-filter {
+  color: #cec0fc;
+
+  font-weight: 700;
+}
+
+.arrow {
+  color: white;
+  width: 23px;
+  height: 19px;
+  margin-bottom: -4px;
+}
+
+.title {
+  color: white;
+  width: 55%;
+}
+
+.description {
+  width: 62%;
+  font-weight: 200;
+  color: white;
+}
+
+.star {
+  color: #f3ca8c;
+}
+
+.rating {
+  color: #f3ca8c;
+}
+
+.purple {
+  color: #cec0fc;
+  text-decoration: underline;
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.white {
+  display: inline-block;
+  color: white;
+  margin-right: 7px;
+}
+
+.feats-row {
+  margin: 10px 0;
+  width: 60%;
+}
+
+.top-text {
+  max-width: 1000px;
+}
+
+.width-container {
+  width: 1184px;
+  margin: auto;
+}
+
+.sm-img {
+  display: none;
+}
+
+.sm-row {
+  display: inline;
+}
+
+.price-container {
+  display: none;
+}
+
+.time-left {
+  display: none;
+}
+
+.cart {
+  display: none;
+}
+
+.guarantee {
+  display: none;
+}
+
+.gift-container {
+  display: none;
+}
+
+@media only screen and (max-width: 1150px) {
+  .top-container {
+    padding: 50px 0;
+    margin: 0px auto;
+  }
+  .width-container {
+    width: 600px;
+    margin: auto;
+  }
+
+  .top-text {
+    margin: auto;
+  }
+  .sm-img {
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .sm-row {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .price-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .new-price {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .old-price {
+    text-decoration: line-through;
+    color: gray;
+    padding: 0 10px;
+    margin: auto 5px;
+  }
+
+  .discount {
+    font-size: 13px;
+    color: white;
+    margin: auto 5px auto 0;
+  }
+
+  .time-left {
+    color: #b32d0f;
+    font-size: 15px;
+    margin: 10px 0;
+  }
+
+  .alarm {
+    display: inline-block;
+
+    padding-right: 5px;
+  }
+
+  .cart {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: block;
+    color: white;
+    border: 0;
+    background-color: #a435f0;
+    font-weight: 500;
+  }
+
+  .guarantee {
+    text-align: center;
+    width: 100%;
+    color: white;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .gift-container {
+    color: white;
+    display: flex;
+    width: 100%;
+    text-decoration: underline;
+    justify-content: space-between;
+  }
+}

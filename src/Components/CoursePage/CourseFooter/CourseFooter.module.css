@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  background-color: #1c1d1f;
+  border-top: 1px solid #3e4143;
+  border-right: 1px solid #3e4143;
+  border-bottom: 1px solid #3e4143;
+}
+.company-images {
+  order: 2;
+  margin: 20px 20px 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-images > img {
+  margin-right: 10px;
+}
+
+.text {
+  color: white;
+  margin: 30px;
+}
+
+.business {
+  color: #cec0fc;
+}
+
+.business:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    display: block;
+  }
+}

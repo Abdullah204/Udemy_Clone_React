@@ -1,3 +1,9 @@
+# Steps to run the project   
+1- open 2 terminals  
+2- using the first navigate to my-app/src  
+3- run json-server --watch myData.json (should run on localhost:3000 port)  
+4- using the second terminal run npm start , it will ask you to run on another port , click y (should run on localhost:3001 port)  
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

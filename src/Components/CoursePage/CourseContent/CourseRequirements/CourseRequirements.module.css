@@ -1,0 +1,8 @@
+.item {
+  padding: 5px 0;
+}
+
+.list {
+  list-style: disc;
+  margin-left: 20px;
+}
